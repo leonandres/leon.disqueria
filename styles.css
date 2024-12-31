@@ -41,9 +41,26 @@ a {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.card-body {
+    padding: 1rem;
+}
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: .75rem;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+.badge {
+    margin-bottom: .5rem;
 }
 
 .newsletter-signup {
@@ -89,5 +106,15 @@ a {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #f7f9fc;
+    background: white;
+}
+
+footer {
+    width: 100%;
+    background-color: #212529;
+    color: white;
+}
+
+.card-body {
+
 }

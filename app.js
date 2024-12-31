@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("DOMContentLoaded se disparó");
     cargarElementosComunes();
     cargarCarritoDesdeStorage();
+    if(document.getElementById("ediciones-container")){
+        cargarEdiciones();
+    }
     cargarProductos();
 });
 
@@ -249,7 +252,7 @@ function cargarEdiciones() {
             nombre: "Dark Side of the Moon (50th Anniversary)",
             artista: "Pink Floyd",
             precio: 399.99,
-            foto: "ruta-imagen.jpg",
+            foto: "/img/dark-side-of-the-moon.jpg",
             descripcion: "Edición especial 50 aniversario",
             limitada: true
         },
@@ -271,14 +274,20 @@ function cargarEdiciones() {
         const col = document.createElement("div");
         col.className = "col-md-4 mb-4";
         col.innerHTML = `
-            <div class="card h-100">
-                <img src="${edicion.foto}" class="card-img-top" alt="${edicion.nombre}">
-                <div class="card-body">
-                    <h5 class="card-title">${edicion.nombre}</h5>
+            <div class = "card h-100">
+                <img src = "${edicion.foto}" class="card-img-top" alt="${edicion.nombre}">
+                <div class = "card-body">
+                    <h5 class = "card-title">${edicion.nombre}</h5>
                     <p class="card-text">${edicion.descripcion}</p>
                     ${edicion.limitada ? '<span class="badge bg-danger">Edición Limitada</span>' : ''}
                     <p class="mt-2">$${edicion.precio}</p>
-                    <button class="btn btn-primary" onclick="agregarAlCarrito(${edicion.id})">
+                    <button class="btn btn-primary" onclick="agregarAlCarrito({
+                        id: ${edicion.id},
+                        nombre: '${edicion.nombre}',
+                        artista: '${edicion.artista}',
+                        precio: ${edicion.precio},
+                        foto: '${edicion.foto}'
+                    })">
                         Agregar al carrito
                     </button>
                 </div>

@@ -9,12 +9,12 @@
 
     <title>Disquería</title>
 </head>
-<body>
+<body class = "d-flex flex-column min-vh-100">
     <header>
         <nav id = "navbar"></nav>
     </header>
 
-    <main class = "container">
+    <main class = "container flex-grow-1">
         <div class = "position-fixed bottom-0 end-0 mb-3">
             <button class = "btn btn-primary position-relative" data-bs-toggle = "offcanvas">
                 🛒 Carrito
@@ -31,14 +31,12 @@
             <div class = "offcanvas-body">
                 <div id = "carrito-contenido"></div>
                 <div id = "carrito-total" class = "mt-3"></div>
-                <button class="btn btn-success w-100 mt-3" onclick = "finalizarCompra()">Finalizar Compra</button>
+                <button class = "btn btn-success w-100 mt-3" onclick = "finalizarCompra()">Finalizar Compra</button>
             </div>
         </div>
 
         <div id = "discos" class = "my-4"></div>
     </main>
-
-    
 
     <div id = "footer"></div>
 
