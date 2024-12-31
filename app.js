@@ -252,7 +252,7 @@ function cargarEdiciones() {
             nombre: "Dark Side of the Moon (50th Anniversary)",
             artista: "Pink Floyd",
             precio: 399.99,
-            foto: "/img/dark-side-of-the-moon.jpg",
+            foto: "./img/dark-side-of-the-moon.jpeg",
             descripcion: "Edición especial 50 aniversario",
             limitada: true
         },
@@ -261,7 +261,7 @@ function cargarEdiciones() {
             nombre: "Super charro",
             artista: "Los charros",
             precio: 399.99,
-            foto: "ruta-imagen.jpg",
+            foto: "./img/the-beatles-please-please-me.jpg",
             descripcion: "Edición especial 50 aniversario",
             limitada: true
         }
