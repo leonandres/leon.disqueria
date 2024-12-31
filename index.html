@@ -11,14 +11,32 @@
 </head>
 <body>
     <header>
-        <nav id = "navbar">
-            
-        </nav>
+        <nav id = "navbar"></nav>
     </header>
 
-    <main>
-        <div id = "discos"></div>
+    <main class = "container">
+        <div class = "position-fixed bottom-0 end-0 mb-3">
+            <button class = "btn btn-primary position-relative" data-bs-toggle = "offcanvas">
+                🛒 Carrito
+                <span id = "contador-carrito" class = "position-absolute top-0 start-100 translate-middle">0</span>
+            </button>
+        </div>
+
+         <!-- Carrito Offcanvas -->
+         <div class = "offcanvas offcanvas-end" tabindex = "-1" id = "carritoOffcanvas">
+            <div class = "offcanvas-header">
+                <h5 class = "offcanvas-title">Carrito de Compras</h5>
+                <button type = "button" class = "btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class = "offcanvas-body">
+                <div id = "carrito-contenido"></div>
+                <div id = "carrito-total" class = "mt-3"></div>
+                <button class="btn btn-success w-100 mt-3" onclick = "finalizarCompra()">Finalizar Compra</button>
+            </div>
+        </div>
     </main>
+
+    
 
     <div id = "footer"></div>
 
