@@ -241,6 +241,97 @@ function finalizarCompra() {
     }
 }
 
+/*Ediciones*/
+function cargarEdiciones() {
+    const ediciones = [
+        {
+            id: 1,
+            nombre: "Dark Side of the Moon (50th Anniversary)",
+            artista: "Pink Floyd",
+            precio: 399.99,
+            foto: "ruta-imagen.jpg",
+            descripcion: "Edición especial 50 aniversario",
+            limitada: true
+        },
+        {
+            id: 2,
+            nombre: "Super charro",
+            artista: "Los charros",
+            precio: 399.99,
+            foto: "ruta-imagen.jpg",
+            descripcion: "Edición especial 50 aniversario",
+            limitada: true
+        }
+    ];
+
+    const contenedor = document.getElementById("ediciones-container");
+    if (!contenedor) return;
+
+    ediciones.forEach(edicion => {
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-4";
+        col.innerHTML = `
+            <div class="card h-100">
+                <img src="${edicion.foto}" class="card-img-top" alt="${edicion.nombre}">
+                <div class="card-body">
+                    <h5 class="card-title">${edicion.nombre}</h5>
+                    <p class="card-text">${edicion.descripcion}</p>
+                    ${edicion.limitada ? '<span class="badge bg-danger">Edición Limitada</span>' : ''}
+                    <p class="mt-2">$${edicion.precio}</p>
+                    <button class="btn btn-primary" onclick="agregarAlCarrito(${edicion.id})">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>  
+        `;
+        contenedor.appendChild(col);
+    });
+}
+
+// Funciones para catalogo.html
+function cargarCatalogo() {
+    const contenedor = document.getElementById("catalogo-container");
+    if (!contenedor) return;
+
+    // Configurar eventos de filtrado y búsqueda
+    const inputBusqueda = document.getElementById("busqueda");
+    if (inputBusqueda) {
+        inputBusqueda.addEventListener("input", filtrarProductos);
+    }
+
+    const selectOrden = document.getElementById("ordenar");
+    if (selectOrden) {
+        selectOrden.addEventListener("change", ordenarProductos);
+    }
+
+    // Cargar productos iniciales
+    mostrarProductos(productos);
+}
+
+function cargarNovedades(){
+    const contenedor = document.getElementById("novedades-container");
+    if (!contenedor) return;
+
+    const novedades = productos.filter(p => p.esNovedad);
+    novedades.forEach(novedad => {
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-4";
+        col.innerHTML = `
+            <div class = "card h-100">
+                <img src = "${novedad.foto}" class = "card-img-top" alt = "${novedad.nombre}">
+                <div class = "card-body">
+                    <h5 class = "card-title">${novedad.nombre}</h5>
+                    <p class = "card-text">${novedad.descripcion}</p>
+                    <p class = "mt-2">${novedad.precio}</p>
+                    <button class = "btn btn-primary" onclick = "agregarAlCarrito(${novedad.id})">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>`;
+            contenedor.appendChild(col);
+    });
+}
+
 /*let carrito = [];
 
 document.addEventListener("DOMContentLoaded", () => {
