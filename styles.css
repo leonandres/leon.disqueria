@@ -116,5 +116,42 @@ footer {
 }
 
 .card-body {
+    padding: 1rem;
+}
 
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: .75rem;
+}
+
+.boton-carrito {
+    position: fixed;
+    bottom: 2rem;       /* Aumentado de 1rem a 2rem para más separación */
+    right: 2rem;        /* Aumentado de 1rem a 2rem para más separación */
+    z-index: 1050;  /* Aumentado para asegurar que esté por encima de todo */
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10000; /* Más alto que cualquier elemento del contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #0d6efd; /* Azul Bootstrap */
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    transform: translateZ(0);
+    will-change: transform;
+    padding: 0.5rem 1rem; 
+}
+
+.boton-carrito span {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    z-index: 10001;
+    z-index: 1051;      /* Aumentado para estar por encima del botón */
+}
+
+.offcanvas {
+    z-index: 10002;
 }

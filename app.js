@@ -258,8 +258,8 @@ function cargarEdiciones() {
         },
         {
             id: 2,
-            nombre: "Super charro",
-            artista: "Los charros",
+            nombre: "Please please me",
+            artista: "The Beatles",
             precio: 399.99,
             foto: "./img/the-beatles-please-please-me.jpg",
             descripcion: "Edición especial 50 aniversario",
