@@ -2,8 +2,7 @@
 
 Aplicación web para gestión de discos que consume la [API de Discogs] mediante Fetch API.
 
-![Preview de la aplicación](https://github.com/leonandres/leon.disqueria/blob/main/assets/preview.png?raw=true)
-
+<img width="1893" height="942" alt="image" src="https://github.com/user-attachments/assets/db63ea57-1243-4840-aaf7-9b707933a180" />
 ## 🛠️ Tecnologías utilizadas
 - **Frontend**: HTML5, CSS3, Bootstrap 5
 - **JavaScript**: ES6+ con async/await
